@@ -4,7 +4,7 @@ import styles from './BaseSection.module.scss'
 function BaseSection() {
     return ( 
         <div className={styles.BaseSection}>
-            <NavLink to='#'>todos</NavLink>
+            <span>todos</span>
         </div>
      );
 }

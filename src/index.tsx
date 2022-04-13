@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
@@ -7,15 +7,21 @@ import reportWebVitals from './reportWebVitals';
 import { store } from './store';
 import './index.scss'
 
-ReactDOM.render(
+const divRoot=document.getElementById('root')
+if(divRoot===null){
+  throw new Error('Root div not exist')
+}
+
+const root=createRoot(divRoot)
+
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

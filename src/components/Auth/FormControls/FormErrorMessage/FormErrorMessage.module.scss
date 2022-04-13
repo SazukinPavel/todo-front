@@ -1,0 +1,10 @@
+.FormErrorMessage{
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+
+    span{
+        font-size: 1.5rem;
+        margin: auto;
+    }
+}
