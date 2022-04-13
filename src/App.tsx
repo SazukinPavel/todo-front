@@ -1,8 +1,13 @@
+import { Route, Routes } from "react-router-dom";
+import Layout from "./hocs/Layout";
+
 function App() {
   return ( 
-    <div>
-      
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+
+      </Route>
+    </Routes>
    );
 }
 
