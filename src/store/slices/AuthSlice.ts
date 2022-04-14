@@ -27,6 +27,7 @@ const authSlice=createSlice({
         builder.addCase(registerThunk.rejected,(state,action)=>{
             state.errorMessage=action.payload as string
         })
+        builder.addCase(checkTokenThunk.fulfilled,login)
     }
 })
 
@@ -62,5 +63,16 @@ async(dto,{rejectWithValue})=>{
         return res.data.user
     }catch(e:any){
         return rejectWithValue(e.response.data.message)
+    }
+})
+
+export const checkTokenThunk=createAsyncThunk<User,null>('checkTokenThunk',
+async(_,{rejectWithValue})=>{
+    try{
+        const res=await AuthService.checkToken()
+        return res.data
+    }catch(e:any){
+        localStorage.removeItem('token')
+        return rejectWithValue('error')
     }
 })

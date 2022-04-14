@@ -1,3 +1,4 @@
+import { User } from './../types/User';
 import { AuthResponseDto } from './../types/dto/AuthResponse.dto';
 import { RegisterDto } from './../types/dto/Register.dto';
 import { $axios } from '../http';
@@ -11,6 +12,10 @@ export class AuthService{
 
     static register(dto:RegisterDto){
         return $axios.post<AuthResponseDto>('auth/register',dto)
+    }
+
+    static checkToken(){
+        return $axios.get<User>('auth/')
     }
 
 }

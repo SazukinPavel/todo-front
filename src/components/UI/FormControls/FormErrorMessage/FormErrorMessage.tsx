@@ -1,10 +1,10 @@
 import styles from './FormErrorMessage.module.scss'
 
-interface FormErrorMessage{
+export interface FormErrorMessageProps{
     message?:string
 }
 
-function FormErrorMessage({message}:FormErrorMessage) {
+function FormErrorMessage({message}:FormErrorMessageProps) {
 
     return ( 
         <div className={styles.FormErrorMessage}>

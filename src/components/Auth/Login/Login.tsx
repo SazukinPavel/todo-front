@@ -6,8 +6,8 @@ import { loginThunk, resetAuthError } from "../../../store/slices/AuthSlice";
 import { LoginDto } from "../../../types/dto/Login.dto";
 import Button from "../../UI/Button";
 import ModalWindow from "../../UI/ModalWindow";
-import FormErrorMessage from "../FormControls/FormErrorMessage";
-import FormInput from "../FormControls/FormInput";
+import FormErrorMessage from "../../UI/FormControls/FormErrorMessage";
+import FormInput from "../../UI/FormControls/FormInput";
 import styles from './Login.module.scss'
 
 function Login() {
@@ -21,6 +21,7 @@ function Login() {
     const onLogin=(dto:LoginDto)=>{
         dispatch(loginThunk(dto))
         reset()
+        goBack()
     }
 
     const resetError=()=>{

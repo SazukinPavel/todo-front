@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
+import styles from './UserSection.module.scss'
 
 function UserSection() {
     return ( 
-        <div>
-            <NavLink to='todos'>Todos</NavLink>
+        <div className={styles.UserSection}>
+            <NavLink to='todos'>Задачи</NavLink>
+            <NavLink to='todos/add'>Добавить задачу</NavLink>
         </div>
      );
 }

@@ -6,8 +6,8 @@ import { registerThunk, resetAuthError } from "../../../store/slices/AuthSlice";
 import { RegisterDto } from "../../../types/dto/Register.dto";
 import Button from "../../UI/Button";
 import ModalWindow from "../../UI/ModalWindow";
-import FormErrorMessage from "../FormControls/FormErrorMessage";
-import FormInput from "../FormControls/FormInput";
+import FormErrorMessage from "../../UI/FormControls/FormErrorMessage";
+import FormInput from "../../UI/FormControls/FormInput";
 import styles from './Register.module.scss'
 
 function Register() {
@@ -21,6 +21,7 @@ function Register() {
     const onRegister=(dto:RegisterDto)=>{
         dispatch(registerThunk(dto))
         reset()
+        goBack()
     }
     
     const resetError=()=>{

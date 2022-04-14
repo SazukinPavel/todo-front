@@ -1,0 +1,27 @@
+.TodoCard{
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border: gray 0.3rem solid;
+    box-shadow: 2px 4px 6px rgb(66, 64, 64);
+    margin: 1rem 2rem;
+    .Text{
+        h5{
+            text-align: center;
+            font-size: 2.5rem;
+        }
+    
+        p{
+            margin: 0.5rem;
+            font-size: 2rem;
+        }
+    }
+
+    .Buttons{
+        display: flex;
+        flex-direction: column;
+        button{
+            margin: 0.5rem auto;
+        }
+    }
+}
